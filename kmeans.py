@@ -37,7 +37,7 @@ class KMeans:
         m, n = data.shape
 
         if self.init_method == 'kmeans++':
-            self_centroids = self._kmeans_plus_plus_init(data)
+            self.centroids = self._kmeans_plus_plus_init(data)
         else:
             indices = np.random.choice(m, self.k, replace=False)
             self.centroids = data[indices]
