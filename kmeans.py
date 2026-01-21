@@ -22,7 +22,7 @@ class KMeans:
 
         for i in range (1,self.k):
             distance_squared = np.array([
-                min([np.linalg.norm(point-centroid)**2 for centroid in centroids[:1]])
+                min([np.linalg.norm(point-centroid)**2 for centroid in centroids[:i]])
                 for point in data
             ])
             probabilities = distance_squared / distance_squared.sum()
@@ -152,3 +152,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
